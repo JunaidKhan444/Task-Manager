@@ -1,50 +1,61 @@
 # Project Task Manager API
 
-The Project Task Manager API is a RESTful web service developed in Laravel that allows users to manage their tasks and task lists. It provides authentication, user management, and task-related functionalities.
+The Project Task Manager API is a RESTful web service built using the Laravel framework. It provides functionalities for managing user accounts, task lists, tasks, and task statuses.
 
-## Table of Contents
+## Features
 
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Authentication](#authentication)
-- [User Endpoints](#user-endpoints)
-  - [Create an Account (Sign Up)](#create-an-account-sign-up)
-  - [Sign In](#sign-in)
-  - [Get My Profile](#get-my-profile)
-  - [Update Profile](#update-profile)
-- [Task List Endpoints](#task-list-endpoints)
-  - [See My Task List](#see-my-task-list)
-  - [Create Task List](#create-task-list)
-  - [Update Task List](#update-task-list)
-  - [Delete Task List](#delete-task-list)
-  - [See All Tasks in a Task List](#see-all-tasks-in-a-task-list)
-  - [Add Tasks to a List](#add-tasks-to-a-list)
-- [Task Endpoints](#task-endpoints)
-  - [See My Task](#see-my-task)
-  - [Create Task](#create-task)
-  - [Update Task](#update-task)
-  - [Delete Task](#delete-task)
-  - [Set the Task Status](#set-the-task-status)
-- [Task Status](#task-status)
+### Authentication
+
+- Create an account (Sign up)
+- Sign In
+- Get my profile
+- Update profile
+
+### Task List
+
+- See my task list
+- Create task list
+- Update task list
+- Delete task list
+- See all tasks in a task list
+- Add tasks to a list
+
+### Tasks
+
+- See my task
+- Create task
+- Update task
+- Delete task
+- Set the task status
+
+### Task Status
+
+- Todos
+- In Progress
+- Done
 
 ## Getting Started
 
 ### Prerequisites
 
-Before you begin, ensure you have met the following requirements:
-
-- PHP >= 7.4
+- PHP (>= 7.4)
 - Composer
-- Laravel (Refer to the Laravel documentation for installation instructions)
-- Database (e.g., MySQL, PostgreSQL)
+- MySQL
+- Laravel CLI
 
 ### Installation
 
-1. Clone this repository:
+1. Clone the repository.
+2. Install dependencies with `composer install`.
+3. Create a `.env` file and configure your database connection.
+4. Generate application key with `php artisan key:generate`.
+5. Run database migrations and seeders with `php artisan migrate --seed`.
+6. Start the development server with `php artisan serve`.
 
-   ```sh
-   git clone https://github.com/yourusername/project-task-manager-api.git
-   cd project-task-manager-api
+## Contributing
 
-2. Install the project dependencies:
+If you'd like to contribute, please fork the repository and create a new branch. Pull requests are welcome.
+
+## License
+
+This project is licensed under the MIT License.
