@@ -49,7 +49,7 @@ The Project Task Manager API is a RESTful web service built using the Laravel fr
 2. Install dependencies with `composer install`.
 3. Create a `.env` file and configure your database connection.
 4. Generate application key with `php artisan key:generate`.
-5. Run database migrations and seeders with `php artisan migrate --seed`.
+5. Run database migrations and seeders with `php artisan migrate`.
 6. Start the development server with `php artisan serve`.
 
 ## Contributing
