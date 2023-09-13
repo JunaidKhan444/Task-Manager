@@ -38,23 +38,14 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if (!$user) {
-            return [
-                'status' => 'error',
-                'message' => 'Invalid credentials.'
-            ];
+            return $this->error(message: 'Invalid credentials.');
         }
 
         if (!Hash::check($request->password, $user->password)) {
-            return [
-                'status' => 'error',
-                'message' => 'Invalid credentials.'
-            ];
+            return $this->error(message: 'Invalid credentials.');
         }
 
-        return [
-            'status' => 'success',
-            'access_token' => $user->createToken('login')->plainTextToken,
-        ];
+        return $this->success(['access_token' => $user->createToken('login')->plainTextToken]);
     }
 
     public function signOut(Request $request)
@@ -63,8 +54,6 @@ class AuthController extends Controller
             $request->user()->currentAccessToken()->delete();
         }
 
-        return [
-            'status' => 'success',
-        ];
+        return $this->success();
     }
 }
