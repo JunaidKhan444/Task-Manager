@@ -56,4 +56,15 @@ class AuthController extends Controller
             'access_token' => $user->createToken('login')->plainTextToken,
         ];
     }
+
+    public function signOut(Request $request)
+    {
+        if ($request->user()) {
+            $request->user()->currentAccessToken()->delete();
+        }
+
+        return [
+            'status' => 'success',
+        ];
+    }
 }
