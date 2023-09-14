@@ -55,7 +55,3 @@ The Project Task Manager API is a RESTful web service built using the Laravel fr
 ## Contributing
 
 If you'd like to contribute, please fork the repository and create a new branch. Pull requests are welcome.
-
-## License
-
-This project is licensed under the MIT License.
