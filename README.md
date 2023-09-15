@@ -51,7 +51,3 @@ The Project Task Manager API is a RESTful web service built using the Laravel fr
 4. Generate application key with `php artisan key:generate`.
 5. Run database migrations and seeders with `php artisan migrate`.
 6. Start the development server with `php artisan serve`.
-
-## Contributing
-
-If you'd like to contribute, please fork the repository and create a new branch. Pull requests are welcome.
