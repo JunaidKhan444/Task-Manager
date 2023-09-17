@@ -15,18 +15,18 @@ class Controller extends BaseController
     {
         return Response::json(
             array_merge(
-                ['status' => 'success'],
+                ["status" => "success"],
                 $params
             ),
             $status
         );
     }
 
-    public function error(string $message = '', int $status = 400)
+    public function error(string $message = "", int $status = 400)
     {
         return Response::json([
-            'status' => 'error',
-            'message' => $message,
+            "status" => "error",
+            "message" => $message,
         ], $status);
     }
 }

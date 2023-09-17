@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('auth')
+Route::prefix("auth")
     ->controller(AuthController::class)
     ->group(function () {
-        Route::post('/auth/sign-up', [AuthController::class, 'signUp']);
-        Route::post('/auth/sign-in', [AuthController::class, 'signIn']);
-        Route::middleware('auth:sanctum')
-            ->post('/auth/sign-out', [AuthController::class, 'signOut']);
+        Route::post("/auth/sign-up", [AuthController::class, "signUp"]);
+        Route::post("/auth/sign-in", [AuthController::class, "signIn"]);
+        Route::middleware("auth:sanctum")
+            ->post("/auth/sign-out", [AuthController::class, "signOut"]);
     });
