@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    "name" => env("APP_NAME", "Laravel"),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    "env" => env("APP_ENV", "production"),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    "debug" => (bool) env("APP_DEBUG", false),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,9 +55,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    "url" => env("APP_URL", "http://localhost"),
 
-    'asset_url' => env('ASSET_URL'),
+    "asset_url" => env("ASSET_URL"),
 
     /*
     |--------------------------------------------------------------------------
@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    "timezone" => "UTC",
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    "locale" => "en",
 
     /*
     |--------------------------------------------------------------------------
@@ -96,7 +96,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    "fallback_locale" => "en",
 
     /*
     |--------------------------------------------------------------------------
@@ -109,7 +109,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    "faker_locale" => "en_US",
 
     /*
     |--------------------------------------------------------------------------
@@ -122,9 +122,9 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    "key" => env("APP_KEY"),
 
-    'cipher' => 'AES-256-CBC',
+    "cipher" => "AES-256-CBC",
 
     /*
     |--------------------------------------------------------------------------
@@ -132,16 +132,16 @@ return [
     |--------------------------------------------------------------------------
     |
     | These configuration options determine the driver used to determine and
-    | manage Laravel's "maintenance mode" status. The "cache" driver will
+    | manage Laravel"s "maintenance mode" status. The "cache" driver will
     | allow maintenance mode to be controlled across multiple machines.
     |
     | Supported drivers: "file", "cache"
     |
     */
 
-    'maintenance' => [
-        'driver' => 'file',
-        // 'store'  => 'redis',
+    "maintenance" => [
+        "driver" => "file",
+        // "store"  => "redis",
     ],
 
     /*
@@ -155,7 +155,7 @@ return [
     |
     */
 
-    'providers' => ServiceProvider::defaultProviders()->merge([
+    "providers" => ServiceProvider::defaultProviders()->merge([
         /*
          * Package Service Providers...
          */
@@ -177,12 +177,12 @@ return [
     |
     | This array of class aliases will be registered when this application
     | is started. However, feel free to register as many as you wish as
-    | the aliases are "lazy" loaded so they don't hinder performance.
+    | the aliases are "lazy" loaded so they don"t hinder performance.
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-        // 'Example' => App\Facades\Example::class,
+    "aliases" => Facade::defaultAliases()->merge([
+        // "Example" => App\Facades\Example::class,
     ])->toArray(),
 
 ];
