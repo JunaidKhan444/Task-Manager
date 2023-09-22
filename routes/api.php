@@ -25,11 +25,11 @@ Route::prefix("auth")
             ->post("/sign-out", [AuthController::class, "signOut"]);
     });
 
-Route::middleware("auth:sanctom")->group(function () {
+Route::middleware("auth:sanctum")->group(function () {
     Route::prefix("profile")
         ->controller(ProfileController::class)
         ->group(function () {
             Route::get("/", "getProfile");
-            Route::get("/", "updateProfile");
+            Route::post("/", "updateProfile");
         });
 });
