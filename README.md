@@ -1,4 +1,4 @@
-<!-- # Project Task Manager API
+# Project Task Manager API
 
 The Project Task Manager API is a RESTful web service built using the Laravel framework. It provides functionalities for managing user accounts, task lists, tasks, and task statuses. It's like a Todo App.
 
@@ -50,4 +50,4 @@ The Project Task Manager API is a RESTful web service built using the Laravel fr
 3. Create a `.env` file and configure your database connection.
 4. Generate application key with `php artisan key:generate`.
 5. Run database migrations with `php artisan migrate`.
-6. Start the development server with `php artisan serve`. -->
+6. Start the development server with `php artisan serve`.
