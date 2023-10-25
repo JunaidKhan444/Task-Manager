@@ -52,7 +52,7 @@ The Project Task Manager API is a RESTful web service built using the Laravel fr
 5. Run database migrations with `php artisan migrate`.
 6. Start the development server with `php artisan serve`.
 
-# Contributing
+## Contributing
 
 Contributions are welcome! If you'd like to contribute to the Task Manager, please follow these steps:
 
