@@ -52,4 +52,12 @@ The Project Task Manager API is a RESTful web service built using the Laravel fr
 5. Run database migrations with `php artisan migrate`.
 6. Start the development server with `php artisan serve`.
 
-###Project...
+# Contributing
+
+Contributions are welcome! If you'd like to contribute to the Task Manager, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch : `git checkout -b my-feature`.
+3. Make your changes and commit them : `git commit -am 'Add new feature'`.
+4. Push the changes to your fork : `git push origin my-feature`.
+5. Submit a pull request detailing your change.
