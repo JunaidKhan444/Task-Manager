@@ -1,6 +1,6 @@
-# 📋 Project Task Manager API
+# 📋 Project TaskForge API
 
-The **Project Task Manager API** is a robust and user-friendly RESTful web service built on the Laravel framework. Designed with productivity in mind, it seamlessly handles user account management, task lists, individual tasks, and task statuses. 🚀
+The **Project TaskForge API** is a robust and user-friendly RESTful web service built on the Laravel framework. Designed with productivity in mind, it seamlessly handles user account management, task lists, individual tasks, and task statuses. 🚀
 
 ## 🚀 Features
 
@@ -43,7 +43,7 @@ The **Project Task Manager API** is a robust and user-friendly RESTful web servi
 
 ## 🤝 Contributing
 
-Contributions are wholeheartedly welcomed! To contribute to the Task Manager, follow these steps:
+Contributions are wholeheartedly welcomed! To contribute to the TaskForge API, follow these steps:
 
 1. Fork the repository.
 2. Create a new branch: `git checkout -b my-feature`.
