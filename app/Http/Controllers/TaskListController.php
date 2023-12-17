@@ -14,7 +14,7 @@ class TaskListController extends Controller
     public function index()
     {
         return $this->success([
-            "task_list" => TaskList::where("user_id", Auth::id())->get()
+            'task_list' => TaskList::where('user_id', Auth::id())->get()
         ]);
     }
 
@@ -24,7 +24,7 @@ class TaskListController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "title" => ["required", "string"]
+            'title' => ['required', 'string']
         ]);
 
         $taskList = new TaskList();
@@ -33,7 +33,7 @@ class TaskListController extends Controller
         $taskList->save();
 
         return $this->success([
-            "task_list" => $taskList,
+            'task_list' => $taskList,
         ]);
     }
 
@@ -43,7 +43,7 @@ class TaskListController extends Controller
     public function show(TaskList $taskList)
     {
         return $this->success([
-            "task_list" => $taskList,
+            'task_list' => $taskList,
         ]);
     }
 
@@ -53,7 +53,7 @@ class TaskListController extends Controller
     public function update(Request $request, TaskList $taskList)
     {
         $request->validate([
-            "title" => ["string", "required"]
+            'title' => ['string', 'required']
         ]);
 
         $taskList->title = $request->title;

@@ -12,9 +12,9 @@ class AuthController extends Controller
     public function  signUp(Request $request)
     {
         $request->validate(rules: [
-            "email" => ["required", "email", "unique:users"],
-            "password" => ["required", "string", Password::min(8)->letters()->numbers()],
-            "name" => ["required", "string"],
+            'email' => ['required', 'email', 'unique:users'],
+            'password' => ['required', 'string', Password::min(8)->letters()->numbers()],
+            'name' => ['required', 'string'],
         ]);
 
         $user = new User();
@@ -24,28 +24,28 @@ class AuthController extends Controller
         $user->save();
 
         return [
-            "status" => "success",
+            'status' => 'success',
         ];
     }
 
     public function signIn(Request $request)
     {
         $request->validate(rules: [
-            "email" => ["required", "string", "email"],
-            "password" => ["required", "string"],
+            'email' => ['required', 'string', 'email'],
+            'password' => ['required', 'string'],
         ]);
 
-        $user = User::where("email", $request->email)->first();
+        $user = User::where('email', $request->email)->first();
 
         if (!$user) {
-            return $this->error(message: "Invalid credentials.");
+            return $this->error(message: 'Invalid credentials.');
         }
 
         if (!Hash::check($request->password, $user->password)) {
-            return $this->error(message: "Invalid credentials.");
+            return $this->error(message: 'Invalid credentials.');
         }
 
-        return $this->success(["access_token" => $user->createToken("login")->plainTextToken]);
+        return $this->success(['access_token' => $user->createToken('login')->plainTextToken]);
     }
 
     public function signOut(Request $request)

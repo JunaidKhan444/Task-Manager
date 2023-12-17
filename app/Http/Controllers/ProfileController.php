@@ -12,14 +12,14 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
         return $this->success([
-            "profile" => new UserResource($user),
+            'profile' => new UserResource($user),
         ]);
     }
 
     public function updateProfile(Request $request)
     {
         $request->validate([
-            "name" => ["required", "string"]
+            'name' => ['required', 'string']
         ]);
 
         /** @var User */
@@ -28,7 +28,7 @@ class ProfileController extends Controller
         $user->save();
 
         return $this->success([
-            "profile" => new UserResource($user),
+            'profile' => new UserResource($user),
         ]);
     }
 }
