@@ -11,11 +11,11 @@ return [
     | passwords for your application. By default, the bcrypt algorithm is
     | used; however, you remain free to modify this option if you wish.
     |
-    | Supported: "bcrypt", "argon", "argon2id"
+    | Supported: 'bcrypt', 'argon', 'argon2id'
     |
     */
 
-    "driver" => "bcrypt",
+    'driver' => 'bcrypt',
 
     /*
     |--------------------------------------------------------------------------
@@ -28,8 +28,8 @@ return [
     |
     */
 
-    "bcrypt" => [
-        "rounds" => env("BCRYPT_ROUNDS", 10),
+    'bcrypt' => [
+        'rounds' => env('BCRYPT_ROUNDS', 10),
     ],
 
     /*
@@ -43,10 +43,10 @@ return [
     |
     */
 
-    "argon" => [
-        "memory" => 65536,
-        "threads" => 1,
-        "time" => 4,
+    'argon' => [
+        'memory' => 65536,
+        'threads' => 1,
+        'time' => 4,
     ],
 
 ];
