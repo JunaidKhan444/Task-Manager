@@ -13,7 +13,7 @@ The **Project TaskForge API** is a robust and user-friendly RESTful web service 
   - View your personalized task list
   - Create, modify, or delete task lists
   - Access a comprehensive overview of tasks within a specific list
-  - Add new tasks to a list with ease
+  - Create, modify, or delete tasks in a list with ease
 
 - **✅ Task Handling**
   - Effortlessly view individual tasks
