@@ -5,23 +5,23 @@ The **Project TaskForge API** is a robust and user-friendly RESTful web service 
 ## 🚀 Features
 
 - **🔐 Authentication**
-  - Effortlessly create an account (Sign up)
-  - Seamlessly Sign In
-  - Retrieve and update your profile information
+  - Effortlessly create an account (Sign up).
+  - Seamlessly Sign In.
+  - Retrieve and update your profile information.
 
 - **📝 Task List Management**
-  - View your personalized task list
-  - Create, modify, or delete task lists
-  - Access a comprehensive overview of tasks within a specific list
-  - Create, modify, or delete tasks in a list with ease
+  - View your personalized task list.
+  - Create, modify, or delete task lists.
+  - Access a comprehensive overview of tasks within a specific list.
+  - Create, modify, or delete tasks in a list with ease.
 
 - **✅ Task Handling**
-  - Effortlessly view individual tasks
-  - Create, update, or remove tasks
-  - Efficiently set task statuses for clear progress tracking
+  - Effortlessly view individual tasks.
+  - Create, update, or remove tasks.
+  - Efficiently set task statuses for clear progress tracking.
 
 - **📊 Task Status Tracking**
-  - Streamlined categorization into 'Todos', 'In Progress', and 'Done'
+  - Streamlined categorization into 'Todos', 'In Progress', and 'Done'.
 
 ## 🛠️ Getting Started
 
