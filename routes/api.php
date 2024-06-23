@@ -29,6 +29,6 @@ Route::middleware('auth:sanctum')->group(function () {
         ->controller(ProfileController::class)
         ->group(function () {
             Route::get('/', 'getProfile');
-            Route::post('/', 'updateProfile');
+            Route::put('/', 'updateProfile');
         });
 });
