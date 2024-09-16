@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\TaskListResource;
 use App\Models\TaskList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +15,7 @@ class TaskListController extends Controller
     public function index()
     {
         return $this->success([
-            'task_list' => TaskList::where('user_id', Auth::id())->get()
+            'task_list' => TaskListResource::collection(TaskList::where('user_id', Auth::id())),
         ]);
     }
 
@@ -33,7 +34,7 @@ class TaskListController extends Controller
         $taskList->save();
 
         return $this->success([
-            'task_list' => $taskList,
+            'task_list' => new TaskListResource($taskList),
         ]);
     }
 
@@ -43,7 +44,7 @@ class TaskListController extends Controller
     public function show(TaskList $taskList)
     {
         return $this->success([
-            'task_list' => $taskList,
+            'task_list' => new TaskListResource($taskList),
         ]);
     }
 
@@ -58,6 +59,10 @@ class TaskListController extends Controller
 
         $taskList->title = $request->title;
         $taskList->save();
+
+        return $this->success([
+            'task_list' => new TaskListResource($taskList),
+        ]);
     }
 
     /**
@@ -65,6 +70,8 @@ class TaskListController extends Controller
      */
     public function destroy(TaskList $taskList)
     {
-        //
+        $taskList->delete();
+
+        return $this->success();
     }
 }
