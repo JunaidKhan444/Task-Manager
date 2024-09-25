@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\TaskStatus;
 use App\Http\Resources\TaskListResource;
+use App\Http\Resources\TaskResource;
+use App\Models\Task;
 use App\Models\TaskList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -73,5 +76,37 @@ class TaskListController extends Controller
         $taskList->delete();
 
         return $this->success();
+    }
+
+    /**
+     * Display all tasks of specified taskList.
+     */
+    public function tasks(TaskList $taskList)
+    {
+        return $this->success([
+            'tasks' => TaskResource::collection($taskList->tasks),
+        ]);
+    }
+
+    /**
+     * Create task with taskList.
+     */
+    public function addTask(Request $request, TaskList $taskList)
+    {
+        $request->validate([
+            'title' => ['required', 'string'],
+            'details' => ['nullable', 'string'],
+        ]);
+        $task = new Task();
+        $task->user_id = Auth::id();
+        $task->tast_list_id =  $taskList;
+        $task->title =  $request->title;
+        $task->status = TaskStatus::ToDo->value;
+        $task->details =  $request->details;
+        $task->save();
+
+        return $this->success([
+            'tasks' => new TaskResource($task),
+        ]);
     }
 }
