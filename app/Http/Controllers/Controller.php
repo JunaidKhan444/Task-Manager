@@ -11,6 +11,8 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
+    public int $itemsPerPage = 20;
+
     public function success($params = [], $status = 200)
     {
         return Response::json(

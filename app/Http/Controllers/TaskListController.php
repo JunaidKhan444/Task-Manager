@@ -17,8 +17,13 @@ class TaskListController extends Controller
      */
     public function index()
     {
+        $paginated = TaskList::where('user_id', Auth::id())->paginate($this->itemsPerPage);
+
         return $this->success([
-            'task_list' => TaskListResource::collection(TaskList::where('user_id', Auth::id())),
+            'task_list' => TaskListResource::collection($paginated),
+            'total'     => $paginated->total(),
+            'page'      => $paginated->currentPage(),
+            'lastPage'  => $paginated->lastPage(),
         ]);
     }
 
