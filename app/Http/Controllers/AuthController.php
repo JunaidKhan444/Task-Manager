@@ -23,9 +23,7 @@ class AuthController extends Controller
         $user->password = $request->password;
         $user->save();
 
-        return [
-            'status' => 'success',
-        ];
+        return $this->success();
     }
 
     public function signIn(Request $request)

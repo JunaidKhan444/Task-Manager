@@ -53,4 +53,4 @@ Contributions are wholeheartedly welcomed! To contribute to the TaskForge API, f
 
 ## 📝 License
 
-TaskForge is licensed under the MIT License. You can view the full license [**here**](https://github.com/JunaidKhan444/TaskForge/blob/main/LICENSE).
+TaskForge is licensed under the MIT License. You can view the full license [**here**](LICENSE).
