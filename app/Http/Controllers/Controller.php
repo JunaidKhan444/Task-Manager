@@ -13,6 +13,10 @@ class Controller extends BaseController
 
     public int $itemsPerPage = 20;
 
+    public string $sort_by = 'updated_at';
+
+    public string $sort_dir = 'desc';
+
     public function success($params = [], $status = 200)
     {
         return Response::json(

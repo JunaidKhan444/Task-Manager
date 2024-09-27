@@ -15,9 +15,16 @@ class TaskListController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $paginated = TaskList::where('user_id', Auth::id())->paginate($this->itemsPerPage);
+        $request->validate([
+            'sort_by' => ['nullable', 'in:created_at,updated_at,title'],
+            'sort_dir' => ['nullable', 'in:asc,desc'],
+        ]);
+
+        $paginated = TaskList::where('user_id', Auth::id())
+            ->orderBy($request->sort_by ?? $this->sort_by, $request->sort_dir ?? $this->sort_dir)
+            ->paginate($this->itemsPerPage);
 
         return $this->success([
             'task_list' => TaskListResource::collection($paginated),
