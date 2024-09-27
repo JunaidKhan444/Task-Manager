@@ -36,7 +36,7 @@ The TaskForge is a robust and user-friendly RESTful web service built on the Lar
 
 1. Clone the repository.
 2. Install dependencies with `composer install`.
-3. Create a `.env` file and configure your database connection.
+3. Create a `.env` file by copying the contents from the `.env.example` file and pasting them into the newly created .env file, then configure your database connection.
 4. Generate application key with `php artisan key:generate`.
 5. Run database migrations with `php artisan migrate`.
 6. Start the development server with `php artisan serve`.
