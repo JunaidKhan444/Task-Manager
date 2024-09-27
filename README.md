@@ -1,6 +1,6 @@
 # 📋 TaskForge
 
-The TaskForge is a robust and user-friendly RESTful web service built on the Laravel framework. Designed with productivity in mind, it seamlessly handles user account management, task lists, individual tasks, and task statuses. 🚀
+The TaskForge is a user-friendly RESTful web service built on the Laravel framework. Designed with productivity in mind, it seamlessly handles user account management, task lists, individual tasks, and task statuses. 🚀
 
 ## 🚀 Features
 
