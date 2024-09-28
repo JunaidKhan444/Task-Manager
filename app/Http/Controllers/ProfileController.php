@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\UserResource;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    public function getProfile()
+    public function getProfile(): JsonResponse
     {
         $user = Auth::user();
         return $this->success([
@@ -16,7 +17,7 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function updateProfile(Request $request)
+    public function updateProfile(Request $request): JsonResponse
     {
         $request->validate([
             'name' => ['required', 'string']

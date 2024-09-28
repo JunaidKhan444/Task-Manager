@@ -7,6 +7,7 @@ use App\Http\Resources\TaskListResource;
 use App\Http\Resources\TaskResource;
 use App\Models\Task;
 use App\Models\TaskList;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +16,7 @@ class TaskListController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index(Request $request): JsonResponse
     {
         $request->validate([
             'sort_by'  => ['nullable', 'in:created_at,updated_at,title'],
@@ -44,7 +45,7 @@ class TaskListController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         $request->validate([
             'title' => ['required', 'string']
@@ -63,7 +64,7 @@ class TaskListController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TaskList $taskList)
+    public function show(TaskList $taskList): JsonResponse
     {
         abort_unless($taskList->user_id === Auth::id(), 403);
 
@@ -75,7 +76,7 @@ class TaskListController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TaskList $taskList)
+    public function update(Request $request, TaskList $taskList): JsonResponse
     {
         abort_unless($taskList->user_id === Auth::id(), 403);
 
@@ -94,7 +95,7 @@ class TaskListController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TaskList $taskList)
+    public function destroy(TaskList $taskList): JsonResponse
     {
         abort_unless($taskList->user_id === Auth::id(), 403);
 
@@ -106,7 +107,7 @@ class TaskListController extends Controller
     /**
      * Display all tasks of specified taskList.
      */
-    public function tasks(TaskList $taskList)
+    public function tasks(TaskList $taskList): JsonResponse
     {
         return $this->success([
             'tasks' => TaskResource::collection($taskList->tasks),
@@ -116,7 +117,7 @@ class TaskListController extends Controller
     /**
      * Create task with taskList.
      */
-    public function addTask(Request $request, TaskList $taskList)
+    public function addTask(Request $request, TaskList $taskList): JsonResponse
     {
         abort_unless($taskList->user_id === Auth::id(), 403);
 

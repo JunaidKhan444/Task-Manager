@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Enums\TaskStatus;
 use App\Http\Resources\TaskResource;
 use App\Models\Task;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Enum;
@@ -14,7 +15,7 @@ class TaskController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index(Request $request): JsonResponse
     {
         $request->validate([
             'sort_by'  => ['nullable', 'in:created_at,updated_at,title,details,status'],
@@ -52,7 +53,7 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         $request->validate([
             'title' => ['required', 'string'],
@@ -74,7 +75,7 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Task $task)
+    public function show(Task $task): JsonResponse
     {
         abort_unless($task->user_id === Auth::id(), 403);
 
@@ -86,7 +87,7 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Task $task)
+    public function update(Request $request, Task $task): JsonResponse
     {
         abort_unless($task->user_id === Auth::id(), 403);
 
@@ -107,7 +108,7 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Task $task)
+    public function destroy(Task $task): JsonResponse
     {
         abort_unless($task->user_id === Auth::id(), 403);
 
@@ -119,7 +120,7 @@ class TaskController extends Controller
     /**
      * Update task status.
      */
-    public function updateStatus(Request $request, Task $task)
+    public function updateStatus(Request $request, Task $task): JsonResponse
     {
         abort_unless($task->user_id === Auth::id(), 403);
 

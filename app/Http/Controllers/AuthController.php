@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 
 class AuthController extends Controller
 {
-    public function  signUp(Request $request)
+    public function  signUp(Request $request): JsonResponse
     {
         $request->validate(rules: [
             'email' => ['required', 'email', 'unique:users'],
@@ -26,7 +27,7 @@ class AuthController extends Controller
         return $this->success();
     }
 
-    public function signIn(Request $request)
+    public function signIn(Request $request): JsonResponse
     {
         $request->validate(rules: [
             'email' => ['required', 'string', 'email'],
@@ -46,7 +47,7 @@ class AuthController extends Controller
         return $this->success(['access_token' => $user->createToken('login')->plainTextToken]);
     }
 
-    public function signOut(Request $request)
+    public function signOut(Request $request): JsonResponse
     {
         if ($request->user()) {
             $request->user()->currentAccessToken()->delete();
